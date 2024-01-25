@@ -7,12 +7,19 @@ interface StatsCardProps {
   imgUrl: string;
   value: number;
   title: string;
+  className?: any;
 }
 
-const StatsCard = ({ imgUrl, value, title }: StatsCardProps) => {
+const StatsCard = ({ imgUrl, value, title, className }: StatsCardProps) => {
   return (
-    <div className="light-border background-light900_dark300 flex flex-wrap items-center justify-evenly gap-4 rounded-md border p-6 shadow-light-300 dark:shadow-dark-200">
-      <Image src={imgUrl} alt={title} width={40} height={50} />
+    <div className="light-border background-light900_dark300 flex flex-wrap items-center justify-evenly gap-4 rounded-md border p-6 text-center shadow-light-300 dark:shadow-dark-200">
+      <Image
+        src={imgUrl}
+        alt={title}
+        width={40}
+        height={50}
+        className={className}
+      />
       <div className="">
         <p className="paragraph-semibold text-dark200_light900">{value}</p>
         <p className="body-medium text-dark400_light700">{title}</p>
@@ -36,13 +43,13 @@ const Stats = ({ totalAnswers, totalQuestions, badges, reputation }: Props) => {
       </h4>
       <div className="mt-5 grid grid-cols-1 gap-4 xs:grid-cols-2 md:grid-cols-4">
         <div className="light-border background-light900_dark300 flex flex-wrap items-center justify-evenly gap-4 rounded-md border p-6 shadow-light-300 dark:shadow-dark-200">
-          <div className="">
+          <div className="text-center">
             <p className="paragraph-semibold text-dark200_light900">
               {formatAndDivideNumber(totalQuestions)}
             </p>
             <p className="body-medium text-dark400_light700">Questions</p>
           </div>
-          <div className="">
+          <div className="text-center">
             <p className="paragraph-semibold text-dark200_light900">
               {formatAndDivideNumber(totalAnswers)}
             </p>
