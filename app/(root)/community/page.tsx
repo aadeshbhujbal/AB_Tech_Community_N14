@@ -38,7 +38,8 @@ const Page = async ({ searchParams }: SearchParamsProps) => {
         />
       </div>
 
-      <section className="mt-12 flex flex-wrap gap-4 lg:flex-nowrap">
+      <section className="mt-12 flex flex-wrap gap-4 ">
+        {" "}
         {result.users.length > 0 ? (
           result.users.map((user) => <UserCard key={user._id} user={user} />)
         ) : (
