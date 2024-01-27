@@ -3,7 +3,7 @@ import React from "react";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Inter, Space_Grotesk } from "next/font/google";
 import type { Metadata } from "next";
-import { WebVitals } from "./web-vitals";
+import WebVitals from "./_components/web-vitals";
 import { ThemeProvider } from "@/context/ThemeProvider";
 import "./globals.css";
 import "../styles/prism.css";
@@ -34,7 +34,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  WebVitals();
   return (
     <html lang="en">
       <ClerkProvider
@@ -46,7 +45,10 @@ export default function RootLayout({
         }}
       >
         <body className={`${inter.variable} ${spaceGrotesk.variable}`}>
-          <ThemeProvider>{children}</ThemeProvider>
+          <ThemeProvider>
+            {children}
+            <WebVitals />
+          </ThemeProvider>
         </body>
       </ClerkProvider>
     </html>
