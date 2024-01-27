@@ -1,13 +1,16 @@
 import LeftSidebar from "@/components/shared/LeftSidebar";
 import Navbar from "@/components/shared/Navbar/navbar";
-
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import RightSidebar from "@/components/shared/RightSidebar";
 import { Toaster } from "@/components/ui/toaster";
 import React from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <main className="background-light850_dark100 relative">
+      <SpeedInsights />
+      <Analytics />
       <Navbar />
       <div className="flex">
         <LeftSidebar />

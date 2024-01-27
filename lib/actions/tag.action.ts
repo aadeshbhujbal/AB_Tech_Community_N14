@@ -111,11 +111,10 @@ export async function getQuestionsByTagId(params: GetQuestionsByTagIdParams) {
       ],
     });
 
-    const isNext = tag.questions.length > pageSize;
-
     if (!tag) {
       throw new Error("Tag not found");
     }
+    const isNext = tag.questions.length > pageSize;
 
     // console.log(tag);
 
