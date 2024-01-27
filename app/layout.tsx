@@ -3,7 +3,7 @@ import React from "react";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Inter, Space_Grotesk } from "next/font/google";
 import type { Metadata } from "next";
-import { WebVitals } from "./components/web-vitals";
+import { WebVitals } from "./web-vitals";
 import { ThemeProvider } from "@/context/ThemeProvider";
 import "./globals.css";
 import "../styles/prism.css";
@@ -35,7 +35,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   WebVitals();
-
   return (
     <html lang="en">
       <ClerkProvider
