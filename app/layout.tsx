@@ -3,10 +3,10 @@ import React from "react";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Inter, Space_Grotesk } from "next/font/google";
 import type { Metadata } from "next";
+import { WebVitals } from "./components/web-vitals";
+import { ThemeProvider } from "@/context/ThemeProvider";
 import "./globals.css";
 import "../styles/prism.css";
-
-import { ThemeProvider } from "@/context/ThemeProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -34,6 +34,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  WebVitals();
+
   return (
     <html lang="en">
       <ClerkProvider
